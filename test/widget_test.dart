@@ -39,5 +39,13 @@ void main() {
     await tester.tap(find.byIcon(Icons.remove));
     await tester.pump();
     expect(find.text('0'), findsOneWidget);
+
+    // Reset returns the count to zero.
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.pump();
+    expect(find.text('1'), findsOneWidget);
+    await tester.tap(find.text('Reset'));
+    await tester.pump();
+    expect(find.text('0'), findsOneWidget);
   });
 }
