@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test2/counter_value.dart';
+import 'package:test2/reset_counter_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,6 +48,12 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _resetCounter() {
+    setState(() {
+      _counter = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,6 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             const Text('Current count'),
             CounterValue(count: _counter),
+            ResetCounterButton(onPressed: _resetCounter),
           ],
         ),
       ),
