@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Counter'),
     );
   }
 }
@@ -39,6 +39,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _decrementCounter() {
+    if (_counter == 0) {
+      return;
+    }
     setState(() {
       _counter--;
     });
@@ -57,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: .center,
           children: [
-            const Text('You have pushed the button this many times:'),
+            const Text('Current count'),
             CounterValue(count: _counter),
           ],
         ),
