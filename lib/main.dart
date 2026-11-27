@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test2/counter_parity.dart';
 import 'package:test2/counter_value.dart';
 import 'package:test2/reset_counter_button.dart';
 
@@ -69,6 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             const Text('Current count'),
             CounterValue(count: _counter),
+            CounterParity(count: _counter),
             ResetCounterButton(onPressed: _resetCounter),
           ],
         ),
